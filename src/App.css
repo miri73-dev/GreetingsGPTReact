@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+}
+
+.selection-button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
