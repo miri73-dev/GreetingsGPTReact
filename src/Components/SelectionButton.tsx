@@ -1,6 +1,5 @@
 // import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { Theme, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
@@ -23,17 +22,6 @@ const MenuProps = {
   },
 };
 
-
-function getStyles(name: string, personName: readonly string[], theme: Theme) {
-  
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
-
 export default function SelectionButton({label, selectedTitle}:{label:string, selectedTitle:string}) {
 
   const buttonsOptions = useSelector((state:RootState)=>
@@ -42,11 +30,6 @@ export default function SelectionButton({label, selectedTitle}:{label:string, se
   
   const selectorButton = buttonsOptions.find(button=>button.title === selectedTitle)
 
-  console.log('buttonsOptions:', buttonsOptions);
-  console.log('selectedTitle:', selectedTitle);
-  console.log('selectorButton:', selectorButton);
-
-  const theme = useTheme();
   const [choice, setChoice] = useState<string[]>([]);
   const [display, setDisplay] = useState(false);
 
